@@ -100,12 +100,9 @@
                             <a class="btn-solid-lg page-scroll" href="#div-newsletter" id="btn-sign-up">Subscribe</a>
                         </div> <!-- end of text-container -->
 			<div>
-				        <p>
-<span tx-content="include" 
-      aria-label="Onboarding progress: step ${pageString} of 03">
-    <span tx-content="exclude" aria-hidden="true">${pageString} / 03</span>
-</span>
-    </p>
+			
+<div aria-label={`You have completed ${stepCount} of 3 steps`}>${stepCount} / 3</div
+
 			</div>
                     </div> <!-- end of col -->
                     <div class="col-lg-6 col-xl-7">
