@@ -7,7 +7,7 @@
             variables_parser: function(text, fn) {
             // Custom rule to replace aria-label values with a variable expression
             // If the aria-label contains ${stepCount}, replace it with {{0}}
-            text = text.replace(/s-href="([^"]*)"/g, function(a, b) {
+            text = text.replace(/aria-label="([^"]*)"/g, function(a, b) {
             // Register the content as a variable using fn and replace with {{0}} if it contains ${stepCount}
             if (b.includes("${stepCount}")) {
                 return a.replace(b, "{{0}}");
