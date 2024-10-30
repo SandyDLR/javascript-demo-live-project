@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript">window.liveSettings={api_key:"7eabcb740578417692882277995198e3",
-							  variables_parser: function(text, fn) {
-    // Replace aria-label attribute values with {{0}} when ${stepCount} appears
-    text = text.replace(/aria-label="([^"]*)"/g, function(a, b) {
-      // If the replacement content includes ${stepCount}, return {{0}}
-      if (b.includes("${stepCount}")) {
-        return a.replace(b, "{{0}}");
-      }
-      // Otherwise, register the content as a variable using fn function
-      return a.replace(b, fn(b));
-    });
-    return text;
-  }
-						        };</script>
+    <script type="text/javascript">
+        window.liveSettings={
+            api_key:"7eabcb740578417692882277995198e3",
+            variables_parser: function(text, fn) {
+            // Custom rule to replace aria-label values with a variable expression
+            // If the aria-label contains ${stepCount}, replace it with {{0}}
+            text = text.replace(/aria-label="([^"]*)"/g, function(a, b) {
+            // Register the content as a variable using fn and replace with {{0}} if it contains ${stepCount}
+            if (b.includes("${stepCount}")) {
+                return a.replace(b, "{{0}}");
+            }
+            // Otherwise, use fn function to register as a variable expression
+            return a.replace(b, fn(b));
+            });
+            return text;
+            }
+        };
+    </script>
     <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
