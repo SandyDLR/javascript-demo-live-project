@@ -101,10 +101,12 @@
                         </div> <!-- end of text-container -->
 			<div>
 				        <p>
-        Add the 
-        <span class="tx-inline" data-tx-segment="basil">basil</span>, 
-        <span class="tx-inline" data-tx-segment="pine-nuts">pine nuts</span>, 
-        and <span class="tx-inline" data-tx-segment="garlic">garlic</span> to a blender and blend into a paste.
+      <span
+        className={styles.progressNumbers}
+        aria-label={`Onboarding progress: step ${pageString} of 03`}
+      >
+        <span aria-hidden="true">{pageString} / 03</span>
+      </span>
     </p>
 			</div>
                     </div> <!-- end of col -->
