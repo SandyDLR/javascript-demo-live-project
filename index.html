@@ -5,10 +5,8 @@
         window.liveSettings={
             api_key:"7eabcb740578417692882277995198e3",
             variables_parser: function(text, fn) {
-                // Replace dynamic variable patterns within aria-label and s-href attributes
-                text = text.replace(/(s-href|aria-label)="([^"]*\$\{stepCount\}[^"]*)"/g, function(a, b, c) {
-                // Register the dynamic content as a variable using fn function, replacing ${stepCount} with {{0}}
-                return a.replace(c, fn(c.replace("${stepCount}", "{{0}}")));
+                text = text.replace(/\${stepCount}/g, function(match) {
+                    return fn(match);
                 });
                 return text;
             }
